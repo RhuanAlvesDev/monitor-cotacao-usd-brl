@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico de Moedas</title>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 20px 0;
+        }
+
+        .grafico-container {
+            width: 100%;
+            max-width: 900px;
+            height: 300px; /* controla altura */
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Comparação USD x BRL</h1>
+
+<div class="grafico-container">
+    <canvas id="graficoMoedas"></canvas>
+</div>
+
+<script>
+    fetch("/cotacao")
+        .then(response => response.json())
+        .then(data => {
+
+            const labels = [];
+            const usdBrl = [];
+            const brlUsd = [];
+
+            data.forEach(item => {
+                const valorUsdBrl = parseFloat(item.bid);
+                const valorBrlUsd = 1 / valorUsdBrl;
+
+                const dataFormatada = new Date(item.timestamp * 1000);
+                const label = dataFormatada.toLocaleDateString("pt-BR");
+
+                labels.push(label);
+                usdBrl.push(valorUsdBrl);
+                brlUsd.push(valorBrlUsd);
+            });
+
+            // ordem cronológica
+            labels.reverse();
+            usdBrl.reverse();
+            brlUsd.reverse();
+
+            const ctx = document.getElementById("graficoMoedas");
+
+            new Chart(ctx, {
+                type: "line",
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: "USD -> BRL",
+                            data: usdBrl,
+                            borderColor: "blue",
+                            borderWidth: 2,
+                            yAxisID: "y1",
+                            tension: 0.3,
+                            pointRadius: 4
+                        },
+                        {
+                            label: "BRL -> USD",
+                            data: brlUsd,
+                            borderColor: "green",
+                            borderWidth: 2,
+                            yAxisID: "y2",
+                            tension: 0.3,
+                            pointRadius: 4
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: "index",
+                        intersect: false
+                    },
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: "Cotação USD x BRL (Últimos 10 dias)"
+                        },
+                        tooltip: {
+                            mode: "index",
+                            intersect: false
+                        }
+                    },
+                    scales: {
+                        y1: {
+                            type: "linear",
+                            position: "left",
+                            title: {
+                                display: true,
+                                text: "USD -> BRL"
+                            }
+                        },
+                        y2: {
+                            type: "linear",
+                            position: "right",
+                            title: {
+                                display: true,
+                                text: "BRL -> USD"
+                            },
+                            grid: {
+                                drawOnChartArea: false
+                            }
+                        }
+                    }
+                }
+            });
+
+        });
+    setInterval(() => {
+        location.reload();
+    }, 60000);
+</script>
+
+</body>
+</html>
