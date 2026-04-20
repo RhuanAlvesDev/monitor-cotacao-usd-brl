@@ -1,76 +1,74 @@
-💱 Monitor de Cotação USD/BRL
+# 💱 MONITOR DE COTAÇÃO USD/BRL
+
+## 🚀 Sobre o projeto
 
 Projeto fullstack para monitoramento da cotação do dólar (USD) em relação ao real (BRL).
+
 O sistema consome uma API externa, trata os dados e exibe um gráfico interativo no navegador.
 
-🚀 Objetivo do projeto
+---
 
-Este projeto foi desenvolvido para praticar:
 
-Consumo de APIs externas
-Criação de APIs REST com Spring Boot
-Manipulação de dados no frontend
-Visualização de dados com gráficos
+## ⚙️ Tecnologias utilizadas
 
-⚙️ Tecnologias utilizadas
+### 💻 Backend
+- Java  
+- Spring Boot  
+- Maven  
 
-Backend:
+### 🌐 Frontend
+- HTML  
+- JavaScript  
+- Chart.js  
 
-Java
-Spring Boot
-Maven
 
-Frontend:
+## 📊 Funcionalidades
 
-HTML
-JavaScript
-Chart.js
+- Consulta de cotação USD → BRL via API externa  
+- Cálculo automático da cotação inversa (BRL → USD)  
+- Exibição em gráfico de linha  
+- Atualização automática dos dados  
+- Visualização com dois eixos  
 
-Outros:
+---
 
-Git
-GitHub
 
-📊 Funcionalidades
+## 🚀 Como executar o projeto
 
-Consulta de cotação USD → BRL via API externa
-Cálculo automático da cotação inversa (BRL → USD)
-Exibição em gráfico de linha
-Atualização automática dos dados
-Visualização com dois eixos (melhor leitura)
+### 1. Clonar o repositório
 
-🧠 Como funciona
-
-O backend (Spring Boot) consome a API externa de cotação
-Os dados são retornados em formato JSON
-O frontend busca esses dados via fetch
-Os valores são tratados e exibidos no gráfico
-
-🚀 Como executar o projeto
-
-Clonar o repositório
-
+```bash
 git clone https://github.com/SEU-USUARIO/monitor-cotacao-usd-brl.git
-
-Entrar na pasta do projeto
-
+2. Entrar na pasta
 cd monitor-cotacao-usd-brl
+3. Rodar o backend
 
-Executar o backend
+👉 IntelliJ:
 
-Opção 1 — IntelliJ:
+Execute a classe CotacaoApplication.java
 
-Abrir o projeto
-Rodar a classe CotacaoApplication.java
-
-Opção 2 — Terminal:
+👉 Terminal:
 
 Linux/Mac:
+
 ./mvnw spring-boot:run
 
 Windows:
-mvnw.cmd spring-boot:run
 
-Acessar no navegador
+mvnw.cmd spring-boot:run
+4. Acessar
 
 http://localhost:8080/index.html
+
+📌 API utilizada
+
+https://economia.awesomeapi.com.br
+
+💡 Melhorias futuras
+Filtro por período (7, 30 dias)
+Atualização em tempo real
+Deploy online
+Layout estilo dashboard
+👨‍💻 Autor
+
+Rhuan
