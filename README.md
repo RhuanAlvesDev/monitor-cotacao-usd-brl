@@ -31,23 +31,25 @@ Projeto fullstack para monitoramento da cotação do dólar (USD) em relação a
 
 ```bash
 git clone https://github.com/SEU-USUARIO/monitor-cotacao-usd-brl.git
-## ▶️ Rodar o Backend (Spring Boot)
+2. Acessar a pasta do projeto
+cd monitor-cotacao-usd-brl
+▶️ Rodar o Backend (Spring Boot)
+💻 Opção 1 — IntelliJ
+Abra o projeto na IDE
+Localize a classe principal
+Execute:
 
-### 💻 Opção 1 — IntelliJ
+CotacaoApplication.java
 
-- Abra o projeto  
-- Execute a classe:
-
-`CotacaoApplication.java`
-
----
-
-### 💻 Opção 2 — Terminal
-
-#### 🐧 Linux / Mac
-
-```bash
+💻 Opção 2 — Terminal
+🐧 Linux / Mac
 ./mvnw spring-boot:run
-
-###🪟 Windows
+🪟 Windows
 mvnw.cmd spring-boot:run
+🌐 Acessar no navegador
+
+http://localhost:8080/index.html
+
+👨‍💻 Autor
+
+Rhuan Alves
