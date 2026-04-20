@@ -64,11 +64,7 @@ http://localhost:8080/index.html
 
 https://economia.awesomeapi.com.br
 
-💡 Melhorias futuras
-Filtro por período (7, 30 dias)
-Atualização em tempo real
-Deploy online
-Layout estilo dashboard
-👨‍💻 Autor
 
-Rhuan
+# 👨‍💻 Autor
+
+# Rhuan
