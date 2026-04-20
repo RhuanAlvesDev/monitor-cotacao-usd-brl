@@ -64,7 +64,3 @@ http://localhost:8080/index.html
 
 https://economia.awesomeapi.com.br
 
-
-# 👨‍💻 Autor
-
-# Rhuan
