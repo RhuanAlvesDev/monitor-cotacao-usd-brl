@@ -1,48 +1,76 @@
-###💱 Monitor de Cotação USD/BRL
+💱 Monitor de Cotação USD/BRL
 
-Projeto fullstack para monitoramento da cotação do dólar (USD) em relação ao real (BRL), utilizando Spring Boot no backend e Chart.js no frontend.
+Projeto fullstack para monitoramento da cotação do dólar (USD) em relação ao real (BRL).
+O sistema consome uma API externa, trata os dados e exibe um gráfico interativo no navegador.
 
-###🚀 Funcionalidades
-📡 Consumo de API externa de cotação de moedas
-🔗 API REST com Spring Boot
-📊 Visualização gráfica com Chart.js
-🔄 Comparação entre USD → BRL e BRL → USD
-⚡ Atualização automática dos dados
-###🛠 Tecnologias Utilizadas
-Java 17+
+🚀 Objetivo do projeto
+
+Este projeto foi desenvolvido para praticar:
+
+Consumo de APIs externas
+Criação de APIs REST com Spring Boot
+Manipulação de dados no frontend
+Visualização de dados com gráficos
+
+⚙️ Tecnologias utilizadas
+
+Backend:
+
+Java
 Spring Boot
 Maven
+
+Frontend:
+
 HTML
 JavaScript
 Chart.js
 
-###▶️ Como Executar o Projeto
-1. Clonar o repositório
+Outros:
+
+Git
+GitHub
+
+📊 Funcionalidades
+
+Consulta de cotação USD → BRL via API externa
+Cálculo automático da cotação inversa (BRL → USD)
+Exibição em gráfico de linha
+Atualização automática dos dados
+Visualização com dois eixos (melhor leitura)
+
+🧠 Como funciona
+
+O backend (Spring Boot) consome a API externa de cotação
+Os dados são retornados em formato JSON
+O frontend busca esses dados via fetch
+Os valores são tratados e exibidos no gráfico
+
+🚀 Como executar o projeto
+
+Clonar o repositório
+
 git clone https://github.com/SEU-USUARIO/monitor-cotacao-usd-brl.git
+
+Entrar na pasta do projeto
+
 cd monitor-cotacao-usd-brl
 
-## 2. Rodar o Backend (Spring Boot)
+Executar o backend
 
-### Opção 1 — IDE (IntelliJ/Eclipse)
+Opção 1 — IntelliJ:
 
-Abra o projeto na IDE
-Localize a classe principal
-Execute:
-CotacaoApplication.java
+Abrir o projeto
+Rodar a classe CotacaoApplication.java
 
-### Opção 2 — Terminal
+Opção 2 — Terminal:
 
-Linux / Mac
-
+Linux/Mac:
 ./mvnw spring-boot:run
 
-Windows
-
+Windows:
 mvnw.cmd spring-boot:run
 
-## 3. Acessar no navegador
+Acessar no navegador
 
 http://localhost:8080/index.html
-👨‍💻 Autor
-
-##Rhuan Alves
