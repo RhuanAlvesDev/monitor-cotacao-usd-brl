@@ -2,6 +2,8 @@
 
 Projeto fullstack para monitoramento da cotação do dólar (USD) em relação ao real (BRL), utilizando Spring Boot no backend e Chart.js no frontend.
 
+---
+
 ## 🚀 Funcionalidades
 
 - Consumo de API externa de cotação de moedas
@@ -17,7 +19,8 @@ Projeto fullstack para monitoramento da cotação do dólar (USD) em relação a
 - Java 17+
 - Spring Boot
 - Maven
-- HTML / JavaScript
+- HTML
+- JavaScript
 - Chart.js
 
 ---
@@ -44,4 +47,5 @@ Windows:
 
 mvnw.cmd spring-boot:run
 4. Acessar no navegador
+
 http://localhost:8080/index.html
